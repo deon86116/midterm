@@ -60,7 +60,7 @@ int serialCount = 0;
 int song[n][49]={};
 int noteLength[n][49]={}; 
 int button_count=0;
-int change=-2;
+int change=0;
 int choose = 0;
 int gesture_index=0;
 
@@ -396,27 +396,18 @@ void show_info(){
         if(choose == 0) {
             uLCD.color(RED);
             if(stop == 0 )        uLCD.printf("Pause\n");
-            else if (stop == 1)   uLCD.printf("Play\n");  
-            uLCD.color(WHITE);
-            uLCD.printf("Interrupt\n");
-            uLCD.printf("Load Song\n");  
+            else if (stop == 1)   uLCD.printf("Play\n");   
         }
         else if(choose == 1) {
-            uLCD.color(WHITE);
-            if(stop == 0 )        uLCD.printf("Pause\n");
-            else if (stop == 1)   uLCD.printf("Play\n");
             uLCD.color(RED);
-            uLCD.printf("Interrupt\n");
-            uLCD.color(WHITE);
-            uLCD.printf("Load Song\n");    
+            if(stop == 0 )        uLCD.printf("Pause\n");
+            else if (stop == 1)   uLCD.printf("Play\n");     
         }
         else if(choose == 2) {
-            uLCD.color(WHITE);
+            uLCD.color(RED);
             if(stop == 0 )        uLCD.printf("Pause\n");
             else if (stop == 1)   uLCD.printf("Play\n");
-            uLCD.printf("Interrupt\n");
-            uLCD.color(RED);
-            uLCD.printf("Load Song\n");   
+            
         }
         
      
@@ -499,22 +490,7 @@ void show_info(){
             uLCD.printf("song3\n\n");
         }
     }
-        else if (change == -1 ){
-        uLCD.reset();
-        uLCD.cls();
-        uLCD.locate(0,1);
-        uLCD.color(WHITE);
-        uLCD.printf("Program Shut Down \n");
-    }
-
-        else if (change == -2 ){
-        uLCD.reset();
-        uLCD.cls();
-        uLCD.locate(0,1);
-        uLCD.color(WHITE);
-        uLCD.printf("Loading...\n");
         
-    }
   
   
   }
