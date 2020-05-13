@@ -163,7 +163,7 @@ void current_function(){
     //pause || playing
     if(choose == 0)     stop = !stop;
 
-    else if(choose == 1)     change = -1;
+    else if(choose == 1)     stop = !stop;
 
   
 }
@@ -397,18 +397,26 @@ void show_info(){
             uLCD.color(RED);
             if(stop == 0 )        uLCD.printf("Pause\n");
             else if (stop == 1)   uLCD.printf("Play\n");  
+            uLCD.color(WHITE);
+            uLCD.printf("Interrupt\n");
+            uLCD.printf("Load Song\n");  
         }
         else if(choose == 1) {
             uLCD.color(WHITE);
             if(stop == 0 )        uLCD.printf("Pause\n");
             else if (stop == 1)   uLCD.printf("Play\n");
-              
+            uLCD.color(RED);
+            uLCD.printf("Interrupt\n");
+            uLCD.color(WHITE);
+            uLCD.printf("Load Song\n");    
         }
         else if(choose == 2) {
             uLCD.color(WHITE);
             if(stop == 0 )        uLCD.printf("Pause\n");
             else if (stop == 1)   uLCD.printf("Play\n");
-            
+            uLCD.printf("Interrupt\n");
+            uLCD.color(RED);
+            uLCD.printf("Load Song\n");   
         }
         
      
@@ -490,8 +498,24 @@ void show_info(){
             uLCD.color(BLUE);
             uLCD.printf("song3\n\n");
         }
-
+        
+        else if (change == -1 ){
+        uLCD.reset();
+        uLCD.cls();
+        uLCD.locate(0,1);
+        uLCD.color(WHITE);
+        uLCD.printf("Program Shut Down \n");
     }
+
+    else if (change == -2 ){
+        uLCD.reset();
+        uLCD.cls();
+        uLCD.locate(0,1);
+        uLCD.color(WHITE);
+        uLCD.printf("Loading...\n");
+        
+    }
+  
   
   }
 
