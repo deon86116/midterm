@@ -389,7 +389,7 @@ void show_info(){
             uLCD.printf("song3\n"); 
 
         }
-        if(stop == 0)       uLCD.printf("(Play)\n\n");
+        if(stop == 0)       uLCD.printf("(Playing)\n\n");
         else if(stop == 1)  uLCD.printf("(Pause)\n\n");  
 
 
@@ -498,7 +498,7 @@ void show_info(){
             uLCD.color(BLUE);
             uLCD.printf("song3\n\n");
         }
-        
+    }
         else if (change == -1 ){
         uLCD.reset();
         uLCD.cls();
@@ -507,7 +507,7 @@ void show_info(){
         uLCD.printf("Program Shut Down \n");
     }
 
-    else if (change == -2 ){
+        else if (change == -2 ){
         uLCD.reset();
         uLCD.cls();
         uLCD.locate(0,1);
